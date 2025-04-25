@@ -1,668 +1,503 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Sysforval ERP</title>
-    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon" />
-    <!-- Bootstrap , fonts & icons  -->
-    <link rel="stylesheet" href="./css/bootstrap.css" />
-    <link rel="stylesheet" href="./fonts/icon-font/css/style.css" />
-    <link rel="stylesheet" href="./fonts/typography-font/typo.css" />
-    <link rel="stylesheet" href="./fonts/fontawesome-5/css/all.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Plugin'stylesheets  -->
-    <link rel="stylesheet" href="./plugins/aos/aos.min.css" />
-    <link rel="stylesheet" href="./plugins/fancybox/jquery.fancybox.min.css" />
-    <!-- Vendor stylesheets  -->
-    <link rel="stylesheet" href="./css/main.css" />
-    <!-- Custom stylesheet -->
+    <title>Chi Tiết Hội Thoại Lễ Đám Hỏi (Minh Trí & Ngọc Yến)</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Basic Placeholder CSS -->
+    <style>
+      /* Basic styles - mostly overridden by Tailwind but provide fallback */
+      body {
+        font-family: sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafb;
+        color: #333;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 0.75em;
+      }
+      h1 {
+        font-size: 2em;
+        text-align: center;
+        padding: 1em 0;
+        background-color: #db2777;
+        color: white;
+      }
+      h2 {
+        font-size: 1.8em;
+        text-align: center;
+        color: #4a044e;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+        padding-bottom: 0.2em;
+        border-bottom: 2px solid #fbcfe8;
+      }
+      h3 {
+        font-size: 1.5em;
+        color: #be185d;
+        border-bottom: 1px solid #f9a8d4;
+        padding-bottom: 0.3em;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 0.5em;
+        padding-left: 1.5em;
+        position: relative;
+      }
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #db2777;
+        font-weight: bold;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 15px;
+      }
+      .phase-section {
+        margin-bottom: 40px;
+      }
+      .speaker-section {
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 15px;
+        border-top: 1px solid #e5e7eb;
+        color: #6b7280;
+      }
+    </style>
+    <script>
+      // Simple configuration for Tailwind (optional)
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "wedding-rose": "#be185d", // For Nhà Trai accents
+              "wedding-pink": "#db2777", // For Nhà Gái accents
+              "phase-begin": "#6b21a8", // Purple
+              "phase-main": "#0f766e", // Teal
+              "phase-end": "#4338ca", // Indigo
+            },
+          },
+        },
+      };
+    </script>
   </head>
-
   <body
-    data-theme-mode-panel-active
-    data-theme="light"
-    style="font-family: 'Mazzard H'"
+    class="bg-gradient-to-br from-pink-50 via-rose-50 to-red-50 font-sans text-gray-800 leading-relaxed"
   >
-    <div class="site-wrapper overflow-hidden position-relative">
-      <!-- Site Header -->
-      <!-- Preloader -->
-      <!-- <div id="loading">
-    <div class="preloader">
-     <img src="./image/preloader.gif" alt="preloader">
-   </div>
-   </div>    -->
-      <!--Site Header Area -->
-      <header
-        class="site-header site-header--menu-center dark-mode-texts landing-17-menu site-header--absolute site-header--sticky"
+    <header
+      class="bg-gradient-to-r from-rose-600 to-pink-600 text-white p-6 shadow-lg mb-8 sticky top-0 z-10"
+    >
+      <h1
+        class="text-2xl md:text-3xl lg:text-4xl font-bold text-center drop-shadow-md"
       >
-        <div class="container">
-          <nav class="navbar site-navbar">
-            <!-- Brand Logo-->
-            <div class="brand-logo">
-              <a href="#">
-                <!-- light version logo (logo must be black)-->
-                <img
-                  src="image/logo/logo-black.png"
-                  alt=""
-                  class="light-version-logo"
-                />
-                <!-- Dark version logo (logo must be White)-->
-                <img
-                  src="image/logo/logo-white.png"
-                  alt=""
-                  class="dark-version-logo"
-                />
-              </a>
-            </div>
-            <!-- <div class="menu-block-wrapper">
-            <div class="menu-overlay"></div>
-            <nav class="menu-block" id="append-menu-header">
-              <div class="mobile-menu-head">
-                <div class="go-back">
-                  <i class="fa fa-angle-left"></i>
-                </div>
-                <div class="current-menu-title"></div>
-                <div class="mobile-menu-close">&times;</div>
-              </div>
-              <ul class="site-menu-main">
-                <li class="nav-item nav-item-has-children">
-                  <a href="#" class="nav-link-item drop-trigger">Dropdowns <i class="fas fa-angle-down"></i>
-                  </a>
-                  <ul class="sub-menu" id="submenu-9">
-                    <li class="sub-menu--item">
-                      <a href="#">Dropdown 01</a>
-                    </li>
-                    <li class="sub-menu--item">
-                      <a href="#">Dropdown 02</a>
-                    </li>
-                    <li class="sub-menu--item">
-                      <a href="#">Dropdown 03</a>
-                    </li>
-                    <li class="sub-menu--item">
-                      <a href="#">Dropdown 04</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link-item">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://uxtheme.net/product-support/" class="nav-link-item">sysforval</a>
-                </li>
-              </ul>
-            </nav>
-          </div> -->
-            <div
-              class="header-btns header-btn-l-17 ms-auto d-none d-xs-inline-flex align-items-center"
-            >
-              <a class="btn sign-in-btn focus-reset" href="#">
-                info@sysforval.com
-              </a>
-              <a class="start-trail-btn btn focus-reset" href="#">
-                Contact us !
-              </a>
-            </div>
-            <!-- mobile menu trigger -->
-            <div class="mobile-menu-trigger">
-              <span></span>
-            </div>
-            <!--/.Mobile Menu Hamburger Ends-->
-          </nav>
-        </div>
-      </header>
-      <!-- navbar- -->
-      <!-- Hero Area -->
-      <div class="hero-area-l-17 position-relative">
-        <div class="container">
-          <div class="row position-relative justify-content-center">
-            <div
-              class="col-xxl-6 col-xl-7 col-lg-8 col-md-11 order-lg-1 order-1"
-              data-aos="fade-right"
-              data-aos-duration="800"
-              data-aos-once="true"
-            >
-              <div class="content text-center">
-                <h1>Manage your business</h1>
-                <p>More accurately, more reliably !</p>
-                <p>
-                  Are you worried about cost, efficiency and productivity<br />for
-                  ERP system implementation ?
-                </p>
-                <a href="#" class="btn">Welcome to Sysforval</a>
-                <span>Free consultation. Free implementation</span>
-              </div>
-            </div>
-            <div class="col-xl-8 col-lg-9 order-lg-1 order-0">
-              <div class="hero-area-image">
-                <img src="image/l8/hero-img.png" alt="" class="w-100" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Feature Area -->
-      <div class="feature-area-l-17 position-relative">
-        <div class="container">
-          <div
-            class="row feature-area-l-17-items justify-content-center text-center"
+        Chi Tiết Hội Thoại Lễ Đám Hỏi (Minh Trí & Ngọc Yến)
+      </h1>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+      <!-- ======================= -->
+      <!--      BEGINNING          -->
+      <!-- ======================= -->
+      <section id="beginning-section" class="phase-section">
+        <h2
+          class="text-3xl font-bold text-center text-phase-begin my-8 py-3 bg-purple-100 rounded-lg shadow border-b-4 border-purple-300"
+        >
+          Phần Mở Đầu: Chào Hỏi & Giới Thiệu Thành Phần Tham Dự
+        </h2>
+
+        <!-- Speaker Section: Nhà Trai Introduction -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-rose mb-4 border-b border-rose-200 pb-2"
           >
-            <div class="col-lg-4 col-md-6 col-sm-9">
-              <div class="single-features single-border position-relative">
-                <div class="circle-dot-1">
-                  <i class="fas fa-circle"></i>
-                </div>
-                <h4>Single Platform</h4>
-                <p>
-                  Business management on one platform. CRM, Sales, Purchasing,
-                  Inventory, Manufacturing, etc...
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-9">
-              <div class="single-features single-border position-relative">
-                <div class="circle-dot-2">
-                  <i class="fas fa-circle"></i>
-                </div>
-                <h4>Operating Optimization</h4>
-                <p>
-                  Synthesize operational information from departments. Make
-                  management more efficient.
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-9">
-              <div class="single-features">
-                <div class="circle-dot-3">
-                  <i class="fas fa-circle"></i>
-                </div>
-                <h4>Free for Implementation</h4>
-                <p>
-                  Free implementation for default features and default
-                  configuration available in community edition.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Content Area 1-->
-      <div class="content-area-l-17-1">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-xl-10 col-lg-12">
-              <div class="row align-items-center justify-content-center">
-                <div
-                  class="col-lg-6 col-md-8"
-                  data-aos="fade-right"
-                  data-aos-duration="800"
-                  data-aos-once="true"
-                >
-                  <div class="content-img position-relative">
-                    <div class="image-1">
-                      <img src="image/l8/content-image-1.png" alt="" />
-                    </div>
-                    <div class="image-2">
-                      <img src="image/l8/content-image-2.png" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="offset-xxl-1 col-xxl-5 col-xl-6 col-lg-6 col-md-8"
-                  data-aos="fade-left"
-                  data-aos-duration="800"
-                  data-aos-once="true"
-                >
-                  <div class="content section-heading-11">
-                    <h2>
-                      Manage everything in your business more accurately and
-                      reliably
-                    </h2>
-                    <p>
-                      Manage data by department or enterprise as a whole with
-                      current time. Flexibility in the application to management
-                      and reporting.
-                    </p>
-                    <a href="#" class="btn focus-reset"
-                      >Start Free for basic default</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Content Area 2
-    <div class="content-area-l-17-2">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-xl-10 col-lg-12">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-8 order-lg-1 order-1" data-aos="fade-left" data-aos-duration="800" data-aos-once="true">
-                <div class="content section-heading-11">
-                  <h2> Manage everything faster in single place.</h2>
-                  <p>Create custom landing pages with
-                    Shade that convert more visitors than any website. With lots of unique blocks, you can easily build a
-                    page without coding.</p>
-                  <a href="#" class="btn focus-reset">Start free 14 days trial</a>
-                </div>
-              </div>
-              <div class="offset-xxl-1 col-xxl-6 col-xl-6 col-lg-6 col-md-8 order-lg-1 order-0" data-aos="fade-right" data-aos-duration="800" data-aos-once="true">
-                <div class="content-img position-relative">
-                  <div class="image-1">
-                    <img src="image/l8/content-image-3.png" alt="">
-                  </div>
-                  <div class="image-2">
-                    <img src="image/l8/content-image-4.png" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-      <!--Video Area-->
-      <div class="video-area-l-17">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-12">
-              <div class="video-content text-center">
-                <!-- <a
-                  data-fancybox=""
-                  href="https://www.youtube.com/watch?v=y7TlnAv6cto"
-                  ><i class="fas fa-play font-size-7"></i
-                ></a> -->
-                <a
-                  data-fancybox=""
-                  href="https://www.youtube.com/watch?v=wTDHZ0WVu2s"
-                  ><i class="fas fa-play font-size-7"></i
-                ></a>
-                <h2>We help you to be successful</h2>
-                <p>
-                  Apply the system, manage resources, build your business to
-                  grow better.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Pricing Area-->
-      <div class="pricing-area-l-17 position-relative overflow-hidden">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div
-              class="col-12 col-lg-8 text-center"
-              data-aos="fade-down"
-              data-aos-duration="800"
-              data-aos-once="true"
+            Người nói: Đại diện Họ Nhà Trai
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
             >
-              <div class="content section-heading-11">
-                <h2>Choose a plan to start</h2>
-                <p>
-                  If you have other needs than our options please contact us
-                  directly
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="row justify-content-center"
-            id="table-price-value"
-            data-pricing-dynamic
-            data-value-active="monthly"
+              Kính thưa ông bà cô bác họ nhà gái.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Hôm nay họ nhà trai chúng tôi đến đây để tiến hành lễ đám hỏi cho
+              hai cháu Minh Trí, Ngọc Yến.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Thì thay mặt họ nhà trai, chúng tôi có lời chào trân trọng nhất
+              đến các ông bà cô bác họ nhà gái. (Vỗ tay)
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Để tiến hành nghi thức buổi lễ, thì trước hết thay mặt họ nhà
+              trai, xin giới thiệu một số thành phần bên họ nhà trai.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              {Giới thiệu các thành viên trong gia đình nhà trai}
+            </li>
+
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Dạ, chúng tôi rất là vui mừng được sự đón tiếp đông đủ trong tình
+              ấm cúng của gia đình nhà gái.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Speaker Section: Nhà Gái Welcome & Introduction -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-pink mb-4 border-b border-pink-200 pb-2"
           >
-            <!-- <div class="col-md-12 pricing-main-area-l-17 text-center">
-              <div class="toggle-btn d-inline-block justify-content-center">
-                <a
-                  class="btn-toggle btn-toggle-2 d-flex price-deck-trigger"
-                  data-pricing-trigger
-                  data-target="#table-price-value"
-                  href="javascript:"
-                >
-                  <span class="round"></span>
-                </a>
-              </div>
-            </div> -->
-            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
-              <div
-                class="single-price"
-                data-aos="fade-right"
-                data-aos-duration="800"
-                data-aos-once="true"
-              >
-                <div class="price-top justify-content-between">
-                  <span>Basic</span>
-                </div>
-                <div class="main-price">
-                  <div class="price d-flex position-relative">
-                    <span class="d-inline-block dynamic-value">$</span>
-                    <h2
-                      class="d-inline-block dynamic-value"
-                      data-active="15"
-                      data-monthly="0"
-                      data-yearly="*"
-                    >
-                      <span
-                        class="dynamic-value"
-                        data-active="/ month"
-                        data-monthly="/ 1.5 month"
-                        data-yearly="/year"
-                      ></span>
-                    </h2>
-                  </div>
-                </div>
-                <p>
-                  Good for small business (less than 7 users) and consulting and
-                  implementation time is less than 1.5 months
-                </p>
-                <div class="price-body pt-8">
-                  <ul class="pricing-list list-unstyled">
-                    <li>
-                      <i class="icon icon-check-2-2"></i> Basic default
-                      implementation
-                    </li>
-                    <li>
-                      <i class="icon icon-check-2-2"></i> Basic default
-                      consultation
-                    </li>
-                    <li>
-                      <i class="icon icon-check-2-2"></i> Operation support (1
-                      month)
-                    </li>
-                    <!--<li><del> <i class="icon icon-check-2-2"></i> Operation support (1 month)</del></li>
-                  <li><del> <i class="icon icon-check-2-2"></i>Custom report</del></li>-->
-                  </ul>
-                </div>
-                <!--<div class="price-btn">
-                <a class="btn" href="#">Start free 14 days trial</a>
-                <p>No credit card required</p>
-              </div>-->
-                <p>* Contact us for more detailed information</p>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
-              <div
-                class="single-price popular-pricing popular-pricing-3 position-relative"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-once="true"
-              >
-                <div class="price-top justify-content-between">
-                  <span>Professional</span>
-                </div>
-                <div class="main-price">
-                  <div class="price d-flex position-relative">
-                    <span class="d-inline-block dynamic-value">$</span>
-                    <h2
-                      class="d-inline-block dynamic-value"
-                      data-active="15"
-                      data-monthly="2k"
-                      data-yearly="*"
-                    >
-                      <span
-                        class="dynamic-value"
-                        data-active="/  month"
-                        data-monthly="/ 3 months"
-                        data-yearly="/year"
-                      ></span>
-                    </h2>
-                  </div>
-                </div>
-                <p>Good for medium business or more than 7 users</p>
-                <div class="price-body">
-                  <ul class="pricing-list list-unstyled">
-                    <li><i class="icon icon-check-2-2"></i> Same as Basic</li>
-                    <li>
-                      <i class="icon icon-check-2-2"></i> Operation support
-                    </li>
-                    <li>
-                      <i class="icon icon-check-2-2"></i> Receive and handle
-                      issues
-                    </li>
-                  </ul>
-                </div>
-                <!--<div class="price-btn">
-                <a class="btn" href="#">Start free 14 days trial</a>
-                <p>No credit card required</p>
-              </div>-->
-                <p>* Contact us for more detailed information</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Brand Area-->
-      <!--<div class="brand-area-l-17">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-9 col-lg-11 col-md-12">
-            <div class="content text-center">
-              <p>We are proud to have some big brands as our customer</p>
-            </div>
-            <div class="brand-area-l-17-items d-flex justify-content-center justify-content-xl-between align-items-center flex-wrap ">
-              <div class="single-brand " data-aos="fade-right" data-aos-duration="500" data-aos-once="true">
-                <img src="image/l8/brand-logo-1.svg" alt="">
-              </div>
-              <div class="single-brand " data-aos="fade-right" data-aos-duration="700" data-aos-once="true">
-                <img src="image/l8/brand-logo-2.svg" alt="">
-              </div>
-              <div class="single-brand " data-aos="fade-right" data-aos-duration="900" data-aos-once="true">
-                <img src="image/l8/brand-logo-3.svg" alt="">
-              </div>
-              <div class="single-brand " data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
-                <img src="image/l8/brand-logo-4.svg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-      <!--Testimonial Area-->
-      <!--<div class="testimonial-area-l-17">
-      <div class="container">
-        <div class="row justify-content-center no-gutters border-collapse-1">
-          <div class="col-lg-4 col-md-6 col-sm-9 p-0">
-            <div class="testimonial-card border h-100">
-              <img src="image/l8/quote.png" alt="">
-              <p>
-                “You made it so simple. My new site is so much faster and
-                easier to work with than my old site. I just choose the page, make the change and click save. ”
-              </p>
-              <div class="d-flex align-items-center">
-                <div class="customer-img mr-4">
-                  <img src="image/l8/client-img-1.png" alt="">
-                </div>
-                <div class="user-identity">
-                  <h5>Sallie Lawson</h5>
-                  <span>Founder of Crips</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-9 p-0">
-            <div class="testimonial-card border h-100">
-              <img src="image/l8/quote.png" alt="" class="mb-12">
-              <p>
-                “Simply the best. Better than all the rest. I’d recommend this product to beginners and advanced users.”
-              </p>
-              <div class="d-flex align-items-center">
-                <div class="customer-img">
-                  <img src="image/l8/client-img-2.png" alt="">
-                </div>
-                <div class="user-identity">
-                  <h5>Sallie Lawson</h5>
-                  <span>Founder of Crips</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-9 p-0">
-            <div class="testimonial-card border h-100">
-              <img src="image/l8/quote.png" alt="" class="mb-12">
-              <p>
-                “This is a top quality product. No need to think twice before purchasing, you simply could not go wrong”
-              </p>
-              <div class="d-flex align-items-center">
-                <div class="customer-img mr-4">
-                  <img src="image/l8/client-img-3.png" alt="">
-                </div>
-                <div class="user-identity">
-                  <h5>Sallie Lawson</h5>
-                  <span>Founder of Crips</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-      <!--CTA Area-->
-      <!--<div class="cta-area-l-17">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="d-md-flex justify-content-between text-align-lg-start text-center align-items-center">
-              <h2>Manage your team in one place</h2>
-              <a href="#" class="btn">Start free 14 days trial</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-      <!--Footer Area-->
-      <footer class="footer-area-l-17 position-relative">
-        <div class="footer-shape">
-          <img src="image/l8/footer-shape.svg" alt="" />
-        </div>
-        <div class="container pt-lg-23 pt-15 pb-12">
-        <div class="row footer-area-l-17-items justify-content-between" data-aos="fade-left" data-aos-duration="800" data-aos-once="true">
-          <div class="col">
-            <div class="footer-widget widget2">
-              <p class="widget-title">Contact Info</p>
-              <ul class="widget-links pl-0 list-unstyled ">
-                <li><a href="">Website: sysforval.com</a></li>
-                <li><a href="">Mail: info@sysforval.com</a></li>
-                <li><a href="">Phone: (+84) 976269683</a></li>
-                <!-- <li><a href="">F.a.q.</a></li> -->
-              </ul>
-            </div>
-          </div>
-          <!--<div class="col">
-            <div class="footer-widget widget3">
-              <p class="widget-title">About</p>
-              <ul class="widget-links pl-0 list-unstyled ">
-                <li><a href="">Catalog</a></li>
-                <li><a href="">Popular</a></li>
-                <li><a href="">Features</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col">
-            <div class="footer-widget widget4">
-              <p class="widget-title">Policy</p>
-              <ul class="widget-links pl-0 list-unstyled ">
-                <li><a href="">Catalog</a></li>
-                <li><a href="">Popular</a></li>
-                <li><a href="">Features</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col">
-            <div class="footer-widget widget4">
-              <p class="widget-title">Team</p>
-              <ul class="widget-links pl-0 list-unstyled ">
-                <li><a href="">Catalog</a></li>
-                <li><a href="">Popular</a></li>
-                <li><a href="">Features</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col">
-            <div class="footer-widget widget4">
-              <p class="widget-title">Support</p>
-              <ul class="widget-links pl-0 list-unstyled ">
-                <li><a href="">Catalog</a></li>
-                <li><a href="">Popular</a></li>
-                <li><a href="">Features</a></li>
-              </ul>
-            </div>
-          </div>-->
-        </div>
-      </div>
-        <!-- footer-bottom start -->
-        <div class="copyright-area-l-17 text-center text-md-start">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-4 col-md-4">
-                <div class="copyright">
-                  <p>&copy; sysforval 2023 All right reserved.</p>
-                </div>
-              </div>
-              <div class="col-lg-5 col-md-6">
-                <div class="footer-menu">
-                  <ul
-                    class="list-unstyled d-flex flex-wrap justify-content-center"
-                  >
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#features">Terms & Conditions</a></li>
-                    <li><a href="#features"> Site map</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-2">
-                <div class="social-icons text-md-end">
-                  <ul class="pl-0 list-unstyled">
-                    <li class="d-inline-block">
-                      <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <!-- <li class="d-inline-block">
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                    </li> -->
-                    <li class="d-inline-block">
-                      <a href="https://www.youtube.com/@sysforval"><i class="fab fa-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <!-- Vendor Scripts -->
-    <script src="js/vendor.min.js"></script>
-    <!-- Plugin's Scripts -->
-    <script src="./plugins/fancybox/jquery.fancybox.min.js"></script>
-    <script src="./plugins/aos/aos.min.js"></script>
-    <script src="./plugins/menu/menu.js"></script>
-    <!-- Activation Script -->
-    <script src="js/custom.js"></script>
+            Người nói: Đại diện Họ Nhà Gái
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Tôi là Cha của cháu Ngọc Yến, đại diện họ nhà gái.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Hôm nay chúng tôi rất vui mừng đón tiếp phái đoàn nhà trai.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Bên gia đình nhà gái chúng tôi gồm có: { Gioi thiệu các thành viên
+              trong gia đình nhà gái}
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Hôm nay là ngày lành tháng tốt, gia đình nhà trai có lời, gia đình
+              nhà gái chúng tôi rất trân trọng, cám ơn gia đình nhà trai đã lo
+              chuẩn bị chu đáo để... (Vỗ tay)
+            </li>
+          </ul>
+        </section>
+      </section>
+      <!-- End Beginning Section -->
+
+      <!-- ======================= -->
+      <!--         MAIN            -->
+      <!-- ======================= -->
+      <section id="main-section" class="phase-section">
+        <h2
+          class="text-3xl font-bold text-center text-phase-main my-8 py-3 bg-teal-100 rounded-lg shadow border-b-4 border-teal-300"
+        >
+          Phần Chính: Nêu Lý Do, Trình Lễ Vật, Chấp Thuận & Nghi Thức
+        </h2>
+
+        <!-- Speaker Section: Nhà Trai Statement of Purpose, Gifts -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-rose mb-4 border-b border-rose-200 pb-2"
+          >
+            Người nói: Đại diện Họ Nhà Trai
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              kính thưa gia đình họ nhà gái.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Thì hai cháu Minh Trí và Ngọc Yến đã tìm hiểu nhau cũng hơn 3 năm
+              rồi Hai cháu từ tình bạn thân đã tiến đến tình yêu. Và hai cháu đã
+              cảm thấy sống không thể thiếu nhau nên hai cháu đã về thưa với gia
+              đình muốn se duyên lâu dài.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Thì gia đình hai bên chúng ta cũng đã nhận thấy rằng hai cháu Trí
+              và Yến rất là đẹp đôi và rất là dễ thương, dễ mến. Hai cháu đã
+              cũng đã đến tuổi trưởng thành và đã có công ăn việc làm vững chắc.
+              Vì thế, hai gia đình chúng ta đã rất mong muốn gặp nhau để bàn bạc
+              thống nhất đi đến se duyên lâu dài cho hai cháu.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Thì ngày 21 tháng 12 vừa qua, gia đình hai họ chúng ta đã có gặp
+              nhau trước là chúng ta thăm hỏi nhau để có một cái tình cảm ban
+              đầu. Và kế đó hai gia đình chúng ta cũng đã bàn bạc đến xây dựng
+              các lễ tiếp theo để tiến đến đám hỏi cho hai cháu.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Thì hôm nay, ngày 3 tháng 5 năm 2025 tức là ngày 6 tháng 4 năm Ất
+              Tỵ, gia đình họ nhà trai chúng tôi đến đây để tiến hành lễ hỏi
+              theo nghi thức của ông bà chúng ta. Vì từ đây như thống nhất thì
+              chúng ta chỉ có một còn một cái lễ là lễ đám hỏi chính thức, nên
+              xin phép gia đình, chúng tôi tiến hành đám hỏi theo nghi thức của
+              một lễ hỏi.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Thì trước hết là phẩm vật để đưa gửi lên Cửu Huyền Thất Tổ nhằm
+              chứng tỏ cái lòng thành ý của gia đình họ nhà trai chúng tôi muốn
+              kết tình thông gia với gia đình anh Chị Năm. Và cũng là lòng thành
+              tâm của chú rể muốn se duyên lâu dài, hạnh phúc với cháu Ngọc Yến.
+            </li>
+
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Vì thế bên gia đình chúng tôi đã đem mâm quả đến để trình với bên
+              nhà gái gồm có: mâm trầu cau, mâm trà rượu, 3 mâm bánh, 1 mâm trái
+              cây
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Ngoài những lễ vật chính thì mẹ của cháu Trí cũng gửi đến cho cô
+              dâu tương lai là một đôi bông và 1 sợi dây chuyền và cũng xin phép
+              đeo trong ngày hôm nay.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-[&quot;🎤&quot;] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Bên cạnh đó, nhà trai cũng gửi đến cô dâu tương lai: { Liệt kê
+              thêm các món trang sức khác}
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Và cũng theo thông tục tập quán của ông bà chúng ta thì cũng có
+              cái phần gọi là lễ nạp tài { SỐ tiền } và trà nước { số tiên } để
+              nhằm góp phần cùng với bên nhà gái để tổ chức tiến hành buổi hôm
+              nay
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              (Đưa tiền trình)
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Vậy thì kính mong họ nhà gái tiếp nhận lễ vật và có ý kiến cho gia
+              đình họ nhà trai chúng tôi
+            </li>
+          </ul>
+        </section>
+
+        <!-- Speaker Section: Nhà Gái Acceptance -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-pink mb-4 border-b border-pink-200 pb-2"
+          >
+            Người nói: Đại diện Họ Nhà Gái
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Thay mặt họ nhà gái chúng tôi xin trân trọng cám ơn nhà trai đã lo
+              chuẩn bị chu đáo các lễ vật để đến đây.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Từ đây cháu Trí và Ngọc Yến đã chính thức nên duyên vợ chồng.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Thì vì các cháu cũng còn trẻ, ít kinh nghiệm trên đường đời, nên
+              cũng cầu mong hai gia đình chúng ta cùng tạo điều kiện giúp đỡ cho
+              các cháu được tốt đẹp hơn để trở thành là rể hiền, dâu thảo của
+              hai gia đình.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Chúng tôi cũng cầu mong như thế. (Vỗ tay)
+            </li>
+          </ul>
+        </section>
+
+        <!-- Speaker Section: Nhà Trai Acknowledgment, Announce Date, Request Bride -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-rose mb-4 border-b border-rose-200 pb-2"
+          >
+            Người nói: Đại diện Họ Nhà Trai
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Dạ, vậy là thay mặt họ nhà trai chúng tôi xin hoan nghênh. (Vỗ
+              tay)
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Như vậy là vừa qua là bên nhà gái đã tiếp nhận phẩm vật và đồng ý
+              để chúng ta chuẩn bị sắp xếp tiến hành cho hôn nhân sắp tới hai
+              cháu.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Vậy hôm nay thay mặt họ nhà trai, chúng tôi cũng xin gửi thiệp
+              trình để thông báo ngày đám cưới sắp đến của hai cháu. Mong là họ
+              nhà gái đồng ý, hoan hỉ. (Đưa thiệp trình)
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Đây là thiệp trình. Hai cháu Trần Minh Trí và Lê Ngọc Yến có duyên
+              nợ với nhau nên hai trẻ đã tự nguyện quyết định tiến đến hôn nhân.
+              Quyết định này được hai gia đình Trần Lê hoan hỉ chấp nhận. Hôm
+              nay gia đình họ Trần chúng tôi trân trọng thông báo: Ngày 29 tháng
+              11 năm 2025 nhằm ngày mùng 10 tháng 10 năm Ất Tỵ, chúng tôi xin
+              phép cử hành lễ rước dâu vào lúc 9 giờ.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Vậy thì cũng xin mời thân mẫu của cô dâu cho dẫn cô Yến ra để cho
+              bà mẹ chồng tương lai trao trao bông.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Speaker Section: Nhà Trai Instructions to Couple -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-rose mb-4 border-b border-rose-200 pb-2"
+          >
+            Người nói: Đại diện Họ Nhà Trai (Nói với đôi trẻ)
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🤵👰'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Theo tục lệ ông bà chúng ta thì cũng có mâm trầu cau dâng lên bàn
+              thờ để hai cháu dâng lên bàn thờ Cửu Huyền Thất Tổ. Đây là thể
+              hiện cái duyên theo thông tục tập quán. (Chú rể têm trầu, cô dâu
+              cắt bánh)
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🤵👰'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Hai đứa cầm chung dâng lên bàn thờ + thấp nhang lên bàn thờ
+            </li>
+          </ul>
+        </section>
+      </section>
+      <!-- End Main Section -->
+
+      <!-- ======================= -->
+      <!--        ENDING           -->
+      <!-- ======================= -->
+      <section id="ending-section" class="phase-section">
+        <h2
+          class="text-3xl font-bold text-center text-phase-end my-8 py-3 bg-indigo-100 rounded-lg shadow border-b-4 border-indigo-300"
+        >
+          Phần Kết Thúc: Chúc Tụng & Mời Tiệc
+        </h2>
+
+        <!-- Speaker Section: Nhà Trai Conclusion & Blessings -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-rose mb-4 border-b border-rose-200 pb-2"
+          >
+            Người nói: Đại diện Họ Nhà Trai
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Kính thưa bà con hai họ. Hôm nay là nghi thức của buổi lễ đám hỏi
+              đã kết thúc.
+            </li>
+            <li
+              class="relative pl-6 text-gray-700 before:content-['🎤'] before:absolute before:left-0 before:text-wedding-rose"
+            >
+              Xin chúc gia đình thông gia hai họ bền vững lâu dài, đôi trẻ tiến
+              tới ngày hôn nhân sẽ được trăm năm hạnh phúc. Xin hết ạ! (Vỗ tay)
+            </li>
+          </ul>
+        </section>
+
+        <!-- Speaker Section: Nhà Gái Invitation to Meal -->
+        <section
+          class="speaker-section bg-white rounded-lg shadow-md p-6 mb-6 transition-shadow duration-300 hover:shadow-lg"
+        >
+          <h3
+            class="text-2xl font-semibold text-wedding-pink mb-4 border-b border-pink-200 pb-2"
+          >
+            Người nói: Đại diện Họ Nhà Gái
+          </h3>
+          <ul class="list-none space-y-3">
+            <li
+              class="relative pl-6 text-gray-700 before:content-['💬'] before:absolute before:left-0 before:text-wedding-pink"
+            >
+              Tiếp theo thì gia đình nhà gái cũng mời họ bên nhà trai dùng buổi
+              tiệc mừng cho các cháu.
+            </li>
+          </ul>
+        </section>
+      </section>
+      <!-- End Ending Section -->
+    </main>
+
+    <footer
+      class="text-center text-gray-500 mt-12 py-6 border-t border-gray-300 text-sm"
+    >
+      <p>&copy; 2015-2023 Ghi chép Lễ Đám Hỏi Minh Trí & Ngọc Yến.</p>
+      <p>Chúc hai bạn và hai gia đình mọi điều tốt đẹp!</p>
+    </footer>
   </body>
 </html>
